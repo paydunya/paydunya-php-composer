@@ -84,45 +84,45 @@ class Setup extends Paydunya
     public static function getCheckoutConfirmUrl()
     {
         if (self::getMode() == "live") {
-            return self::ROOT_URL_BASE.self::LIVE_CHECKOUT_CONFIRM_BASE_URL;
+            return self::ROOT_URL_BASE . self::LIVE_CHECKOUT_CONFIRM_BASE_URL;
         } else {
-            return self::ROOT_URL_BASE.self::TEST_CHECKOUT_CONFIRM_BASE_URL;
+            return self::ROOT_URL_BASE . self::TEST_CHECKOUT_CONFIRM_BASE_URL;
         }
     }
 
     public static function getCheckoutBaseUrl()
     {
         if (self::getMode() == "live") {
-            return self::ROOT_URL_BASE.self::LIVE_CHECKOUT_INVOICE_BASE_URL;
+            return self::ROOT_URL_BASE . self::LIVE_CHECKOUT_INVOICE_BASE_URL;
         } else {
-            return self::ROOT_URL_BASE.self::TEST_CHECKOUT_INVOICE_BASE_URL;
+            return self::ROOT_URL_BASE . self::TEST_CHECKOUT_INVOICE_BASE_URL;
         }
     }
 
     public static function getOPRInvoiceUrl()
     {
         if (self::getMode() == "live") {
-            return self::ROOT_URL_BASE.self::LIVE_OPR_BASE_URL;
+            return self::ROOT_URL_BASE . self::LIVE_OPR_BASE_URL;
         } else {
-            return self::ROOT_URL_BASE.self::TEST_OPR_BASE_URL;
+            return self::ROOT_URL_BASE . self::TEST_OPR_BASE_URL;
         }
     }
 
     public static function getOPRChargeUrl()
     {
         if (self::getMode() == "live") {
-            return self::ROOT_URL_BASE.self::LIVE_OPR_CHARGE_BASE_URL;
+            return self::ROOT_URL_BASE . self::LIVE_OPR_CHARGE_BASE_URL;
         } else {
-            return self::ROOT_URL_BASE.self::TEST_OPR_CHARGE_BASE_URL;
+            return self::ROOT_URL_BASE . self::TEST_OPR_CHARGE_BASE_URL;
         }
     }
 
     public static function getDirectPayCreditUrl()
     {
         if (self::getMode() == "live") {
-            return self::ROOT_URL_BASE.self::LIVE_DIRECT_PAY_CREDIT_BASE_URL;
+            return self::ROOT_URL_BASE . self::LIVE_DIRECT_PAY_CREDIT_BASE_URL;
         } else {
-            return self::ROOT_URL_BASE.self::TEST_DIRECT_PAY_CREDIT_BASE_URL;
+            return self::ROOT_URL_BASE . self::TEST_DIRECT_PAY_CREDIT_BASE_URL;
         }
     }
 }

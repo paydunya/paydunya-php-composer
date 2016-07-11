@@ -74,7 +74,7 @@ class CheckoutInvoice extends Checkout
         }
     }
 
-    public function addTax($name,$amount)
+    public function addTax($name, $amount)
     {
         $this->taxes['tax_'.count($this->taxes)] = array(
             'name'   => $name,
@@ -142,7 +142,7 @@ class CheckoutInvoice extends Checkout
         return $this->status;
     }
 
-    public function confirm($token="")
+    public function confirm($token = "")
     {
         $token = trim($token);
 

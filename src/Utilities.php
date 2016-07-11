@@ -52,11 +52,11 @@ class Utilities
     public static function httpGetRequest($url)
     {
         $headers = array(
-            'PAYDUNYA-PUBLIC-KEY'   => Paydunya_Setup::getPublicKey(),
-            'PAYDUNYA-PRIVATE-KEY'  => Paydunya_Setup::getPrivateKey(),
-            'PAYDUNYA-MASTER-KEY'   => Paydunya_Setup::getMasterKey(),
-            'PAYDUNYA-TOKEN'        => Paydunya_Setup::getToken(),
-            'PAYDUNYA-MODE'         => Paydunya_Setup::getMode(),
+            'PAYDUNYA-PUBLIC-KEY'   => Setup::getPublicKey(),
+            'PAYDUNYA-PRIVATE-KEY'  => Setup::getPrivateKey(),
+            'PAYDUNYA-MASTER-KEY'   => Setup::getMasterKey(),
+            'PAYDUNYA-TOKEN'        => Setup::getToken(),
+            'PAYDUNYA-MODE'         => Setup::getMode(),
             'User-Agent'            => Paydunya::VERSION_NAME
         );
 
