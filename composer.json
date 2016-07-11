@@ -16,7 +16,7 @@
             "email": "paydunya@paydunya.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "rmccue/requests": "^1.6"
     },
