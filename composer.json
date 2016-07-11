@@ -1,0 +1,13 @@
+{
+    "name": "paydunya/paydunya",
+    "description": "PAYDUNYA PHP CLIENT",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PAYDUNYA",
+            "email": "paydunya@paydunya.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
