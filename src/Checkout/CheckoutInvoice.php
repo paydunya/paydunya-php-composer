@@ -16,6 +16,7 @@ class CheckoutInvoice extends Checkout
     protected $currency = "fcfa";
     protected $cancel_url;
     protected $return_url;
+    protected $callback_url;
     protected $invoice_url;
     protected $custom_data;
     protected $receipt_url;
@@ -26,6 +27,7 @@ class CheckoutInvoice extends Checkout
     {
         $this->cancel_url = Store::getCancelUrl();
         $this->return_url = Store::getReturnUrl();
+        $this->callback_url = Store::getCallbackUrl();
         $this->custom_data = new CustomData();
     }
 
@@ -71,6 +73,13 @@ class CheckoutInvoice extends Checkout
     {
         if (filter_var($url, FILTER_VALIDATE_URL)) {
             $this->return_url = $url;
+        }
+    }
+
+    public function setCallbackUrl($url)
+    {
+        if (filter_var($url, FILTER_VALIDATE_URL)) {
+            $this->callback_url = $url;
         }
     }
 
@@ -201,7 +210,8 @@ class CheckoutInvoice extends Checkout
             'custom_data' => $this->showCustomData(),
             'actions' => array(
                 'cancel_url' => $this->cancel_url,
-                'return_url' => $this->return_url
+                'return_url' => $this->return_url,
+                'callback_url' => $this->callback_url
             )
         );
 
