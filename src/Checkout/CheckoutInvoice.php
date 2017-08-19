@@ -13,6 +13,7 @@ class CheckoutInvoice extends Checkout
     protected $items = array();
     protected $total_amount = 0.0;
     protected $taxes = array();
+    protected $channels = array();
     protected $currency = "fcfa";
     protected $cancel_url;
     protected $return_url;
@@ -40,6 +41,21 @@ class CheckoutInvoice extends Checkout
             'total_price' => round($totalPrice, 2),
             'description' => $description
         );
+    }
+
+    public function addChannel($channelSlug)
+    {
+        $this->channels[] = $channelSlug;
+    }
+
+    public function addChannels($channels = array())
+    {
+        $this->pushChannels($channels);
+    }
+
+    public function pushChannels($channels = array())
+    {
+        $this->channels = $channels;
     }
 
     public function pushItems($data = array())
@@ -197,7 +213,8 @@ class CheckoutInvoice extends Checkout
                 'items'         => $this->items,
                 'taxes'         => $this->taxes,
                 'total_amount'  => $this->getTotalAmount(),
-                'description'   => $this->getDescription()
+                'description'   => $this->getDescription(),
+                'channels'      => $this->channels
             ),
             'store' => array(
                 'name' => Store::getName(),

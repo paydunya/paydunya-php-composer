@@ -21,11 +21,7 @@ class Utilities
             'User-Agent'            => Paydunya::VERSION_NAME
         );
 
-        if (strnatcmp(phpversion(),'5.3.0') >= 0) {
-            $json_payload = json_encode($data, JSON_FORCE_OBJECT);
-        } else {
-            $json_payload = json_encode((object) $data);
-        }
+        $json_payload = json_encode($data);
 
         $request = Requests::post($url, $headers, $json_payload, array('timeout' => 10));
 
