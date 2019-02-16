@@ -177,7 +177,7 @@ class CheckoutInvoice extends Checkout
 
         $result = Utilities::httpGetRequest(Setup::getCheckoutConfirmUrl().$token);
 
-        if (count($result) > 0) {
+        if (count($result) > 0 && isset($result['status'])) {
             switch ($result['status']) {
                 case 'completed':
                     $this->status = $result['status'];
