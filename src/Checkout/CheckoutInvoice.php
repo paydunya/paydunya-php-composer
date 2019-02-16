@@ -177,7 +177,7 @@ class CheckoutInvoice extends Checkout
 
         $result = Utilities::httpGetRequest(Setup::getCheckoutConfirmUrl().$token);
 
-        if (count($result) > 0) {
+        if (count($result) > 0 && isset($result['status'])) {
             switch ($result['status']) {
                 case 'completed':
                     $this->status = $result['status'];
@@ -201,8 +201,8 @@ class CheckoutInvoice extends Checkout
             }
         } else {
             $this->status = Paydunya::FAIL;
-            $this->response_code = 1002;
-            $this->response_text = "Invoice Not Found";
+            $this->response_code = $result['response_code'];
+            $this->response_text = $result['response_text'];
             return false;
         }
     }
